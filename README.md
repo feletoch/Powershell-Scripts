@@ -3,7 +3,7 @@
 
 <b>Auto7zip.ps1</b><br/>
 Automatically zip the folder to .7z using 7zip<br/>
-usage: require installation of 7zip to %ProgramFiles%\7-Zip\7z.exe</br>
+usage: require installation of 7zip to %ProgramFiles%\7-Zip\7z.exe<br/>
 powershell.exe -executionpolicy bypass -file Auto7zip.ps1 C:\folder C:\backupfolder zipname<br/>
 First arg required, the other 2 are optional
 
@@ -15,3 +15,27 @@ usage: required installation of ffmpeg to C:\ffmpeg\bin\ffmpeg.exe or in system 
 <b>StoreExternalIP.ps1</b><br/>
 Store your external ipv4 to a txt file.<br/>
 usecases: Share non-static IP by using service like onedrive, dropbox or google drive to sync the file and avoid using other DDNS service.
+
+<hr/>
+<b>RestartMinecraftServer.ps1</b><br/>
+Streamline stop, update, backup and restart the bedrock and java servers<br/>
+Usecases: Create scheduled tasks to automaticlly restart the servers<br/>
+Usage: Require update the path for both servers<br/>
+<ul><li>Kill the <i>Java, Javaw</i> and <i>bedrock_server.exe</i></li>
+<li>Run the <b>MinecraftServerUpdate</b> and <b>MinecraftBedrockServerUpdate</b> if the script exist in same folder</li>
+<li>Copy the world data to a temp folder and compress it. Uses <b>Auto7zip.ps1</b> if it exist in same folder, otherwise it uses the Windows default zip. <br/>the backup logic will do it every odd weeks if it has Scheduled task to run it every week.</li>
+<li>Restart the servers</li>
+</ul>
+
+<b>MinecraftServerUpdate.ps1</b><br/>
+Scrape the link and download the server <br/>
+Usage: Require the path of the java server, create MinecraftServerUpdate.ps1 after which can be use to start the server.
+
+<b>MinecraftBedrockServerUpdate.ps1</b><br/>
+Scrape the link and download the server <br/>
+Usage: Require the path of the bedrock server. Unzip of the zip file will override all the setting file except the server.properties. To do: add a array to restore the other settings, not really important right now.
+
+<b>MinecraftSaveBackup.ps1</b><br/>
+Backup the server world as a .7z or zip file<br/>
+Usage: Require either or both path of the java server and bedrock server, the archive folder is optional. The script will use <b>Auto7zip.ps1</b> is it exists in the same folder, if is not found, it would use the default zipping method.
+
