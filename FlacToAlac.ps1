@@ -35,3 +35,5 @@ if(-not (Test-Path -Path $ffmpegPath$ffmpegExcutable -PathType Leaf)){
     Set-Alias ffmpeg $ffmpegPath$ffmpegExcutable
     Transcode
 }
+
+#https://github.com/feletoch/Powershell-Scripts/

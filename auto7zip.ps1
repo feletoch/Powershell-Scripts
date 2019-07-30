@@ -66,3 +66,5 @@ if(($thread) -gt 1){
 Write-Output "compressing data with these parameters '$7zipParameters'"
 zip $7zipParameters $outputPathName $path 
 Write-Output "compression done"
+
+#https://github.com/feletoch/Powershell-Scripts/

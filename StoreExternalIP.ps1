@@ -12,3 +12,5 @@ foreach($location in $fileLocations){
         (Write-Output $currenttime $ipaddr) | Out-File $outputItem
     }
 }
+
+#https://github.com/feletoch/Powershell-Scripts/
