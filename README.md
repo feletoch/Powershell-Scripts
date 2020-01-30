@@ -14,7 +14,11 @@ usage: required installation of ffmpeg to C:\ffmpeg\bin\ffmpeg.exe or in system 
 
 <b>StoreExternalIP.ps1</b><br/>
 Store your external ipv4 to a txt file.<br/>
-usecases: Share non-static IP by using service like onedrive, dropbox or google drive to sync the file and avoid using other DDNS service.
+Usecases: Share non-static IP by using service like onedrive, dropbox or google drive to sync the file and avoid using other DDNS service.
+
+<b>MusicMover.ps1</b><br/>
+Move Music from download folder to designated location.<br/>
+Usercases: Auto trigger when pre-defined file extension in location is created, wait for pre-determined interval and move file to designated folder 
 
 <hr/>
 <b>RestartMinecraftServer.ps1</b><br/>
