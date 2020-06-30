@@ -1,11 +1,14 @@
-﻿if($args.Length -lt 2){
-    Write-Output "Please enter the correct args (java version world path(can be """"), Bedrock version world path(can be """"), compress folder path(optional))"
-    exit
-} 
-
-$array = @()
-foreach($arg in $args){
-   $array += "$arg"
+﻿$array = @()
+if($args.Length -lt 2){
+    Write-Output "Missing the args (java version world path(can be """"), Bedrock version world path(can be """"), compress folder path(optional)), using folder path variable"
+    . .\Variables.ps1
+    $array += (Join-Path -Path $minecraftJavaFolderPath -ChildPath $minecraftWorldSubfolderName)
+    $array += (Join-Path -Path $minecraftBedrockFolderPath -ChildPath $minecraftBedrockWorldSubfolderName)
+    $array += $minecraftSaveArchiveFolder
+} else{
+    foreach($arg in $args){
+    $array += "$arg"
+    }
 }
  
 $mincraftWorldPath,$minecraftBedrockWorldPath,$archivedFolderPath = $array
@@ -47,6 +50,7 @@ if(!(Test-Path -Path $PSScriptRoot"\"$compressArchiveTempFolderName"\"readme.txt
     Write-Output "Create $PSScriptRoo\$compressArchiveTempFolderName\readme.txt completed"
 }
 
+#create a directory in root when archive folder path is not specified
 if([string]::IsNullOrEmpty($archivedFolderPath) -or !(Test-Path -Path $archivedFolderPath -PathType Container)){
     $Script:archivedFolderPath = $PSScriptRoot+"\Archived_Saves"
 }

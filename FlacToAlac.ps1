@@ -1,6 +1,4 @@
-$ffmpegPath = "C:\ffmpeg\bin\"
-$ffmpegExcutable = "ffmpeg.exe"
-$outputpath = 
+. .\External_variables.ps1
 
 function CreatOutputPath {
     $script:outputpath = $PSScriptRoot+"\alac\"

@@ -22,7 +22,7 @@ Streamline stop, update, backup and restart the bedrock and java servers<br/>
 Usecases: Create scheduled tasks to automaticlly restart the servers<br/>
 Usage: Require update the path for both servers<br/>
 <ul><li>Kill the <i>Java, Javaw</i> and <i>bedrock_server.exe</i></li>
-<li>Run the <b>MinecraftServerUpdate</b> and <b>MinecraftBedrockServerUpdate</b> if the script exist in same folder</li>
+<li>Run the <b>MinecraftServerUpdate.ps1</b> and <b>MinecraftBedrockServerUpdate.ps1</b> if the script exist in same folder</li>
 <li>Copy the world data to a temp folder and compress it. Uses <b>Auto7zip.ps1</b> if it exist in same folder, otherwise it uses the Windows default zip. <br/>the backup logic will do it every odd weeks if it has Scheduled task to run it every week.</li>
 <li>Restart the servers</li>
 </ul>

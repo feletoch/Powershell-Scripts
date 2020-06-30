@@ -1,5 +1,4 @@
-$fileName = "ip.txt"
-$fileLocations = @((Get-Content Env:\OneDrive), ([Environment]::GetFolderPath("Desktop")))
+. .\External_variables.ps1
 
 $currenttime = Get-Date 
 $ipaddr = Invoke-RestMethod http://ipinfo.io/json | Select-Object -exp ip
