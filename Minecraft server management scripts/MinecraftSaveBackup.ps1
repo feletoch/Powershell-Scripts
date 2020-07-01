@@ -2,8 +2,8 @@
 if($args.Length -lt 2){
     Write-Output "Missing the args (java version world path(can be """"), Bedrock version world path(can be """"), compress folder path(optional)), using folder path variable"
     . .\Variables.ps1
-    $array += (Join-Path -Path $minecraftJavaFolderPath -ChildPath $minecraftWorldSubfolderName)
-    $array += (Join-Path -Path $minecraftBedrockFolderPath -ChildPath $minecraftBedrockWorldSubfolderName)
+    $array += if(![string]::IsNullOrEmpty($minecraftJavaFolderPath) -and ![string]::IsNullOrEmpty($minecraftWorldSubfolderName)){(Join-Path -Path $minecraftJavaFolderPath -ChildPath $minecraftWorldSubfolderName)}else{""}
+    $array += if(![string]::IsNullOrEmpty($minecraftBedrockFolderPath) -and ![string]::IsNullOrEmpty($minecraftBedrockWorldSubfolderName)){(Join-Path -Path $minecraftBedrockFolderPath -ChildPath $minecraftBedrockWorldSubfolderName)}else{""}
     $array += $minecraftSaveArchiveFolder
 } else{
     foreach($arg in $args){
